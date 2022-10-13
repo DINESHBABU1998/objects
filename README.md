@@ -33,6 +33,8 @@ PODS
 
 5] Link for reference - https://kubernetes.io/docs/concepts/workloads/pods/
 
+
+
 Replica Set
 1] A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time.
 2] Commands which are listed to operate on Replica set
@@ -45,3 +47,9 @@ Deployment
 4] To get deployment roll out status- kubectl rollout status deployment/nginx-deployment
 5] Attaching the link which includes all the command and also the commands if we get any error,
 https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+   
+   
+Services:
+Services provide a way to expose applications running in pods. Their purpose is to represent a set of pods that perform the same function and set the policy for accessing those pods.
+Although pod failure is an expected event in a cluster, Kubernetes replaces the failed pod with a replica with a different IP address. This creates problems in communication between pods that depend on each other.
+Using the kube-proxy process that runs on each cluster node, Kubernetes maps the service's virtual IP address to pod IP addresses. This process allows for easier internal networking but also enables exposing of the deployment to external networks via techniques such as load balancing.
